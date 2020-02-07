@@ -24,5 +24,3 @@ def led_off(color):
                 led_green.off()
         else:
                 pass
-
-	

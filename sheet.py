@@ -10,7 +10,7 @@ class Sheet:
         self.name_list = ["yuto", "kato", "wang", "shigeaki", "yuka"]
         self.id_list = ["01010a10e41a9f23","01010910a417c81b","01010A10E41A9F25","010106010407e602","01010312841a360d"]
         self.scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-        self.credentials = ServiceAccountCredentials.from_json_keyfile_name('/home/pi/Downloads/SK-RasPiTest-53bf6215500f.json', self.scope)
+        self.credentials = ServiceAccountCredentials.from_json_keyfile_name('/home/pi/teamcoi/gspread-sample-44bb354dbe62.json', self.scope)
 
     def read(self,cell):
         return wks.acell(cell).value
@@ -22,7 +22,7 @@ class Sheet:
     def open(self):
         print("open spread sheet")
         gc = gspread.authorize(self.credentials)
-        wks = gc.open('sample').sheet1
+        wks = gc.open('senzokuike').sheet1
         return wks
 
     def write(self,IDs):
